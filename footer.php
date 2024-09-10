@@ -1,6 +1,27 @@
 <footer class="w3l-footer py-5">
   <div class="container pt-lg-5 pt-md-3">
-    <div class="footer-grid_section text-center">
+
+    <div class="footer-widgets">
+            <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
+                <div class="footer-widget-area">
+                    <?php dynamic_sidebar( 'footer-1' ); ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
+                <div class="footer-widget-area">
+                    <?php dynamic_sidebar( 'footer-2' ); ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
+                <div class="footer-widget-area">
+                    <?php dynamic_sidebar( 'footer-3' ); ?>
+                </div>
+            <?php endif; ?>
+        </div>
+
+    <!-- <div class="footer-grid_section text-center">
       <div class="footer-title mb-3">
         <h2> <a class="navbar-brand" href="index.html">
             <span class="sub-log">Home</span> Interior
@@ -133,14 +154,14 @@
       </div>
     </div>
 
-    <!-- copyright -->
+    
     <section class="w3l-footer-29-main w3l-copyright">
       <div class="text-center">
         <p class="copy-footer-29">© 2020 Home Interior. All rights reserved. Design by <a href="https://w3layouts.com/"
             target="_blank">
             W3Layouts</a></p>
       </div>
-    </section>
+    </section> -->
     <!-- //copyright -->
 
   </div>
