@@ -38,7 +38,7 @@
                           <span class="fa fa-clock-o"></span> Mon - Fri: 10:00 - 18:00
                       </li>
                       <li class="top_li mr-lg-0"><span class="fa fa-envelope-o"></span><a
-                              href="mailto:info@example.com">info@example.com </a>
+                              href="mailto:info@example.com">info@example.com</a>
                       </li>
 
                   </ul>
@@ -71,7 +71,17 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <?php wp_nav_menu( array( 'menu_class' => 'navbar-nav mx-lg-auto', 'container' => 'ul', )); ?>
+            <?php 
+                if ( has_nav_menu( 'primary' ) ) {
+                    wp_nav_menu( array(
+                        'theme_location' => 'primary',
+                        'container'      => false,
+                        'menu_class'     => 'navbar-nav mx-lg-auto',
+                    ) );
+                }
+                
+                ?>
+                
           </div>
 
           <div class="d-lg-block d-none">
