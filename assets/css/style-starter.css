@@ -3116,6 +3116,8 @@ input[type="button"].btn-block {
 
 .navbar-nav {
   display: flex;
+  gap: 0px 20px;
+  font-size: 20px;
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
