@@ -152,12 +152,12 @@
           <a href="<?php echo $section2['link']; ?>" class="btn btn-style btn-primary mt-lg-5 mt-4"><?php echo $section2['link_text']; ?></a>
         </div>
         <div class="col-lg-6 img-grids mt-lg-0 mt-5 pl-lg-4">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/p1.jpg'; ?>" alt="" class="img-fluid radius-image" />
-            <img src="<?php echo get_template_directory_uri().'/assets/images/p2.jpg'; ?>" alt="" class="img-fluid radius-image" />
-            <img src="<?php echo get_template_directory_uri().'/assets/images/p3.jpg'; ?>" alt="" class="img-fluid radius-image" />
-            <img src="<?php echo get_template_directory_uri().'/assets/images/p4.jpg'; ?>" alt="" class="img-fluid radius-image" />
-            <img src="<?php echo get_template_directory_uri().'/assets/images/p5.jpg'; ?>" alt="" class="img-fluid radius-image" />
-            <img src="<?php echo get_template_directory_uri().'/assets/images/p6.jpg'; ?>" alt="" class="img-fluid radius-image" />
+            <img src="<?php echo $section2['image_1']; ?>" alt="" class="img-fluid radius-image" />
+            <img src="<?php echo $section2['image_2']; ?>" alt="" class="img-fluid radius-image" />
+            <img src="<?php echo $section2['image_3']; ?>" alt="" class="img-fluid radius-image" />
+            <img src="<?php echo $section2['image_4']; ?>" alt="" class="img-fluid radius-image" />
+            <img src="<?php echo $section2['image_5']; ?>" alt="" class="img-fluid radius-image" />
+            <img src="<?php echo $section2['image_6']; ?>" alt="" class="img-fluid radius-image" />
         </div>
 
       </div>
@@ -190,7 +190,7 @@
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-md-5 mt-4">
                     <div class="position-relative">
-                    <img src="<?php echo get_template_directory_uri().'/assets/images/s1.jpg'; ?>" alt="" class="img-fluid" />
+                    <img src="<?php echo $section3['image']; ?>" alt="" class="img-fluid" />
                         <a href="#small-dialog" class="popup-with-zoom-anim play-view text-center position-absolute">
                             <span class="video-play-icon">
                                 <span class="fa fa-play"></span>
@@ -215,7 +215,7 @@
     <div class="container py-lg-5 py-md-4">
         <div class="row">
             <div class="col-lg-6 ">
-                <img src="<?php echo get_template_directory_uri().'/assets/images/s2.jpg'; ?>" class="img-fluid radius-image" alt="">
+                <img src="<?php echo $section4['image']; ?>" class="img-fluid radius-image" alt="">
             </div>
             <div class="col-lg-6 align-self mt-lg-0 mt-4">
                 <div class="row mb-sm-4 mb-2 pb-3">
