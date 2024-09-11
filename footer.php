@@ -1,53 +1,54 @@
 <footer class="w3l-footer py-5">
   <div class="container pt-lg-5 pt-md-3">
 
-    <div class="footer-widgets">
-            <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-                <div class="footer-widget-area">
-                    <?php dynamic_sidebar( 'footer-1' ); ?>
-                </div>
-            <?php endif; ?>
+  <?php $footer = get_field('footer'); ?>
+  <?php $contact = get_field('contact_info'); ?>
+  <?php $category = get_field('categories'); ?>
+  <?php $resources = get_field('resources'); ?>
+  <?php $account = get_field('account'); ?>
+  <?php $footer2 = get_field('footer_2'); ?>
 
-            <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-                <div class="footer-widget-area">
-                    <?php dynamic_sidebar( 'footer-2' ); ?>
-                </div>
-            <?php endif; ?>
-
-            <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
-                <div class="footer-widget-area">
-                    <?php dynamic_sidebar( 'footer-3' ); ?>
-                </div>
-            <?php endif; ?>
-        </div>
-
-    <!-- <div class="footer-grid_section text-center">
+    <div class="footer-grid_section text-center">
       <div class="footer-title mb-3">
-        <h2> <a class="navbar-brand" href="index.html">
-            <span class="sub-log">Home</span> Interior
+        <h2> <a class="navbar-brand" href="#">
+            <span class="sub-log"><?php bloginfo( 'name' ); ?></span> 
           </a></h2>
       </div>
       <div class="footer-text">
-        <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ipnut libero
-          malesuada feugiat.
-          Lorem ipsum dolor sit amet elit.</p>
+        <p>
+          <?php echo $footer['body']; ?>
+        </p>
       </div>
     </div>
     <div class="row mt-5">
       <div class="col-lg-4 mb-lg-0 mb-5 footer-top">
         <h4 class="mb-4 w3f_title text-uppercase">Contact Info</h4>
         <div class="footer-style-w3ls mb-3">
-          <p>#302, 5th Floor, ALHK-2247 Colendar ek, Settlers Lane, New York.</p>
+          <p><?php echo $contact['address']; ?></p>
         </div>
         <ul class="list-agileits">
-          <li class="my-2"><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> +(21)-255-999-8888</a></li>
+          <li class="my-2"><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span>
+            <?php echo $contact['phone']; ?>
+          </a></li>
           <li><a href="mailto:interior@mail.com" class="mail"><span class="fa fa-envelope-open-o"></span>
-              interior@mail.com</a></li>
+            <?php echo $contact['email']; ?>
+          </a></li>
         </ul>
       </div>
       <div class="col-lg-2 col-md-3 col-6 footv3-left">
         <h4 class="mb-md-4 mb-3 w3f_title text-uppercase">Company</h4>
-        <ul class="list-agileits">
+        <?php 
+                if ( has_nav_menu( 'primary' ) ) {
+                    wp_nav_menu( array(
+                        'theme_location' => 'footer',
+                        'container'      => 'ul',
+                        'menu_class'     => 'list-agileits ',
+                        
+                    ) );
+                }
+                
+                ?>
+        <!-- <ul class="list-agileits">
           <li class="my-2">
             <a href="about.html">
               About Us
@@ -73,34 +74,34 @@
               Get In Touch
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
       <div class="col-lg-2 col-md-3 col-6">
         <h4 class="mb-md-4 mb-3 w3f_title text-uppercase">Categories</h4>
         <ul class="list-agileits">
           <li class="my-2">
             <a href="#url">
-              Furniture Chairs
+              <?php echo $category['cat_1']; ?>
             </a>
           </li>
           <li class="mb-2">
             <a href="#url">
-              Three Seater Sofas
+              <?php echo $category['cat_2']; ?>
             </a>
           </li>
           <li class="my-2">
             <a href="#url">
-              Dining Tables
+              <?php echo $category['cat_3']; ?>
             </a>
           </li>
           <li class="my-2">
             <a href="#url">
-              Office Chairs
+              <?php echo $category['cat_4']; ?>
             </a>
           </li>
           <li>
             <a href="#url">
-              Kitchen Cabinets
+              <?php echo $category['cat_5']; ?>
             </a>
           </li>
         </ul>
@@ -111,27 +112,27 @@
         <ul class="list-agileits">
           <li class="my-2">
             <a href="#url">
-              Getting Started
+              <?php echo $resources['res_1']; ?>
             </a>
           </li>
           <li class="mb-2">
             <a href="#url">
-              Best Collections
+              <?php echo $resources['res_2']; ?>
             </a>
           </li>
           <li class="my-2">
             <a href="#url">
-              All Categories
+              <?php echo $resources['res_3']; ?>
             </a>
           </li>
           <li class="my-2">
             <a href="#url">
-              24/7 Support
+              <?php echo $resources['res_4']; ?>
             </a>
           </li>
           <li>
             <a href="contact.html">
-              Contact for Help
+              <?php echo $resources['res_5']; ?>
             </a>
           </li>
         </ul>
@@ -142,12 +143,12 @@
         <ul class="list-agileits">
           <li class="my-2">
             <a href="#login">
-              Sign In / Login
+              <?php echo $account['acc_1']; ?>
             </a>
           </li>
           <li class="">
             <a href="#register">
-              Create Account
+              <?php echo $account['acc_2']; ?>
             </a>
           </li>
         </ul>
@@ -157,11 +158,11 @@
     
     <section class="w3l-footer-29-main w3l-copyright">
       <div class="text-center">
-        <p class="copy-footer-29">© 2020 Home Interior. All rights reserved. Design by <a href="https://w3layouts.com/"
-            target="_blank">
-            W3Layouts</a></p>
+        <p class="copy-footer-29">
+          <?php echo $footer2 ; ?>
+        </p>
       </div>
-    </section> -->
+    </section>
     <!-- //copyright -->
 
   </div>
