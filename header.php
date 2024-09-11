@@ -54,8 +54,9 @@
   <div class="container">
       <nav class="navbar navbar-expand-lg">
             <h1>
-                <a class="navbar-brand" href="index.html">
-                    <?php bloginfo( 'name' ); ?>
+                <a class="navbar-brand" href="#">
+                <span class="sub-log"><?php bloginfo( 'name' ); ?></span>
+                    
                 </a>
             </h1>
           <!-- if logo is image enable this   
