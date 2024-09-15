@@ -244,7 +244,7 @@
 
 <!-- home page block5 -->
 <?php $section5 = get_field('section_5'); ?>
-<div class="w3l-homeblock4 py-5" id="quote">
+<div class="w3l-homeblock4 py-5" id="quote" style = "background:url('<?php echo $section5['image']; ?>')">
     <div class="container py-xl-5 py-lg-3">
         <div class="welcome-left text-center py-md-5 py-3">
             <h3>

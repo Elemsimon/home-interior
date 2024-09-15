@@ -21,7 +21,10 @@ function add_script()
 }
 add_action('wp_enqueue_scripts', 'add_script');
 
+// Theme Support
+add_theme_support('post-thumbnails');
 
+// Menu
 function my_custom_theme_setup() {
    register_nav_menus( array(
        'primary' => __( 'Primary Menu', 'text_domain' ),
@@ -29,6 +32,8 @@ function my_custom_theme_setup() {
    ) );
 }
 add_action( 'after_setup_theme', 'my_custom_theme_setup' );
+
+
 
 // Menu Support alternative
 /* add_theme_support('menus'); */
