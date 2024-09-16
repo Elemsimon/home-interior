@@ -2,12 +2,13 @@
 <?php wp_footer(); ?>
 
 <?php $hero = get_field('hero'); ?>
+<?php $slider = get_field('image_slider'); ?>
 <section class="w3l-main-slider" id="home">
      <div class="companies20-content">
          <div class="owl-one owl-carousel owl-theme">
              <div class="item">
                  <li>
-                     <div class="slider-info banner-view bg bg2">
+                     <div class="slider-info banner-view bg bg2" style = "background:url('<?php echo $slider['image_1']; ?>')">
                          <div class="banner-info">
                              <div class="container">
                                  <div class="banner-info-bg">
@@ -27,7 +28,7 @@
              </div>
              <div class="item">
                  <li>
-                     <div class="slider-info  banner-view banner-top1 bg bg2">
+                     <div class="slider-info  banner-view banner-top1 bg bg2" style = "background:url('<?php echo $slider['image_2']; ?>')">
                          <div class="banner-info">
                              <div class="container">
                                  <div class="banner-info-bg">
@@ -47,7 +48,7 @@
              </div>
              <div class="item">
                  <li>
-                     <div class="slider-info banner-view banner-top2 bg bg2">
+                     <div class="slider-info banner-view banner-top2 bg bg2" style = "background:url('<?php echo $slider['image_3']; ?>')">
                          <div class="banner-info">
                              <div class="container">
                                  <div class="banner-info-bg">

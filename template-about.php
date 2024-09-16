@@ -8,7 +8,7 @@ get_header();
 <section class="w3l-about-breadcrumb">
     <div class="breadcrumb-bg breadcrumb-bg-about py-5">
         <div class="container py-lg-5 py-md-3">
-            <h2 class="title">About Us</h2>
+            <h2 class="title"><?php the_title(); ?></h2>
             <ul class="breadcrumbs-custom-path mt-2 text-center">
                 <li><a href="#url">Home</a></li>
                 <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> About Us </li>
