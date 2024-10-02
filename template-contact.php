@@ -25,19 +25,29 @@ get_header();
      <div class="container py-lg-3">
        <div class="top-map">
          <div class="map-content-9">
-         <h3 class="title-big text-center mb-2">Let's get in touch</h3>
-               <p class="mb-lg-5 mb-4 text-center">Give us a call or drop by anytime, we endeavour to answer all
-                 enquiries within 24 hours on business days.</p>
+         <h3 class="title-big text-center mb-2">
+          <?php echo $contact['title'] ? $contact['title'] : 'Let&apos;s get in touch'; ?>
+         </h3>
+              <p class="mb-lg-5 mb-4 text-center">
+                <?php echo $contact['body'] ? $contact['body'] : 'Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days.'; ?> 
+              </p>
            <?php echo do_shortcode('[wpforms id="303" title="false"]')  ?>
          </div>
          <div class="cont-details">
            <ul class="address two">
-             <li><span class="fa fa-map-marker" aria-hidden="true"></span>#302, 5th Floor, ALHK-2247 Colendar ek,
-               Settlers Lane, New York.</li>
-             <li><span class="fa fa-envelope" aria-hidden="true"></span><a
-                 href="mailto:info@example.com">Company@example.com</a></li>
-             <li> <span class="fa fa-phone"></span>
-               <a href="tel:+142 5897555">+142 5897555</a></li>
+             <li><span class="fa fa-map-marker" aria-hidden="true"></span>
+             <?php echo $contact['address'] ? $contact['address'] : '#302, 5th Floor, ALHK-2247 Colendar ek, Settlers Lane, New York.'; ?>
+             
+              </li>
+            <li><span class="fa fa-envelope" aria-hidden="true"></span>
+              <a href="mailto:info@example.com">
+                <?php echo $contact['email'] ? $contact['email'] : 'Company@example.com'; ?>
+              </a></li>
+              <li> <span class="fa fa-phone"></span>
+                <a href="tel:+142 5897555">
+                  <?php echo $contact['phone_number'] ? $contact['phone_number'] : '+142 5897555'; ?> 
+                </a>
+              </li>
            </ul>
          </div>
        </div>
