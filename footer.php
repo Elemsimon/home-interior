@@ -16,23 +16,29 @@
       </div>
       <div class="footer-text">
         <p>
-          <?php echo $footer['body']; ?>
+          <?php echo get_theme_mod('footer_text_setting', 'Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ipnut libero malesuada feugiat. Lorem ipsum dolor sit amet elit.'); ?>
         </p>
       </div>
     </div>
     <div class="row mt-5">
       <div class="col-lg-4 mb-lg-0 mb-5 footer-top">
-        <h4 class="mb-4 w3f_title text-uppercase">Contact Info</h4>
+        <h4 class="mb-4 w3f_title text-uppercase"><?php echo esc_html( get_theme_mod( 'footer_text_setting', __( 'Contact Info', 'mytheme' ) ) ); ?></h4>
         <div class="footer-style-w3ls mb-3">
-          <p><?php echo $contact['address']; ?></p>
+          <p>
+            <?php echo get_theme_mod('footer_address_setting', '#302, 5th Floor, ALHK-2247 Colendar ek, Settlers Lane, New York.'); ?>
+          </p>
         </div>
         <ul class="list-agileits">
-          <li class="my-2"><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span>
-            <?php echo $contact['phone']; ?>
-          </a></li>
-          <li><a href="mailto:interior@mail.com" class="mail"><span class="fa fa-envelope-open-o"></span>
-            <?php echo $contact['email']; ?>
-          </a></li>
+          <li class="my-2">
+            <a href="tel:+7-800-999-800"><span class="fa fa-phone"></span>
+              <?php echo esc_attr(get_theme_mod('footer_phone_setting', '+(21)-255-999-8888')); ?>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:interior@mail.com" class="mail"><span class="fa fa-envelope-open-o"></span>
+              <?php echo esc_attr(get_theme_mod('footer_email_setting', 'interior@mail.com')); ?>
+            </a>
+          </li>
         </ul>
       </div>
       <div class="col-lg-2 col-md-3 col-6 footv3-left">
@@ -79,62 +85,24 @@
       <div class="col-lg-2 col-md-3 col-6">
         <h4 class="mb-md-4 mb-3 w3f_title text-uppercase">Categories</h4>
         <ul class="list-agileits">
-          <li class="my-2">
-            <a href="#url">
-              <?php echo $category['cat_1']; ?>
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="#url">
-              <?php echo $category['cat_2']; ?>
-            </a>
-          </li>
-          <li class="my-2">
-            <a href="#url">
-              <?php echo $category['cat_3']; ?>
-            </a>
-          </li>
-          <li class="my-2">
-            <a href="#url">
-              <?php echo $category['cat_4']; ?>
-            </a>
-          </li>
-          <li>
-            <a href="#url">
-              <?php echo $category['cat_5']; ?>
-            </a>
-          </li>
+          <?php
+            $categories_links = explode(',', get_theme_mod('footer_categories_links', 'Furniture Chairs,Three Seater Sofas,Dining Tables,Office Chairs,Kitchen Cabinets'));
+            foreach ($categories_links as $link) {
+                echo '<li class="my-2"><a href="#">' . esc_html($link) . '</a></li>';
+            }
+            ?>
         </ul>
       </div>
 
       <div class="col-lg-2 col-md-3 col-6 mt-md-0 mt-5">
         <h4 class="mb-md-4 mb-3 w3f_title text-uppercase">Resources</h4>
         <ul class="list-agileits">
-          <li class="my-2">
-            <a href="#url">
-              <?php echo $resources['res_1']; ?>
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="#url">
-              <?php echo $resources['res_2']; ?>
-            </a>
-          </li>
-          <li class="my-2">
-            <a href="#url">
-              <?php echo $resources['res_3']; ?>
-            </a>
-          </li>
-          <li class="my-2">
-            <a href="#url">
-              <?php echo $resources['res_4']; ?>
-            </a>
-          </li>
-          <li>
-            <a href="contact.html">
-              <?php echo $resources['res_5']; ?>
-            </a>
-          </li>
+          <?php
+            $resources_links = explode(',', get_theme_mod('footer_resources_links', 'Getting Started,Best Collections,All Categories,24/7 Support,Contact for Help'));
+            foreach ($resources_links as $link) {
+                echo '<li class="my-2"><a href="#">' . esc_html($link) . '</a></li>';
+            }
+          ?>
         </ul>
       </div>
 
@@ -142,14 +110,12 @@
         <h4 class="mb-md-4 mb-3 w3f_title text-uppercase">Account</h4>
         <ul class="list-agileits">
           <li class="my-2">
-            <a href="#login">
-              <?php echo $account['acc_1']; ?>
-            </a>
-          </li>
-          <li class="">
-            <a href="#register">
-              <?php echo $account['acc_2']; ?>
-            </a>
+          <?php
+            $account_links = explode(',', get_theme_mod('footer_account_links', 'Sign In / Login,Create Account'));
+            foreach ($account_links as $link) {
+              echo '<li class="my-2"><a href="#">' . esc_html($link) . '</a></li>';
+            }
+          ?>
           </li>
         </ul>
       </div>
@@ -159,7 +125,7 @@
     <section class="w3l-footer-29-main w3l-copyright">
       <div class="text-center">
         <p class="copy-footer-29">
-          <?php echo $footer2 ; ?>
+          <?php echo esc_attr(get_theme_mod('footer_copyright', 'Home Interior. All rights reserved.')); ?>
         </p>
       </div>
     </section>

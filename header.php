@@ -30,15 +30,16 @@
                   </ul>
                   <ul class="accounts ml-auto">
                       <li class="top_li">
-                          <span class="fa fa-phone"></span>
-                          <a href="tel:+142 5897555">+142 5897555</a>
+                        <span class="fa fa-phone"></span>
+                        <a href="tel:+142 5897555"><?php echo esc_html(get_theme_mod('header_phone_setting', '+142 5897555')); ?></a>
                       </li>
 
                       <li class="top_li">
-                          <span class="fa fa-clock-o"></span> Mon - Fri: 10:00 - 18:00
+                        <span class="fa fa-clock-o"></span> 
+                        <?php echo esc_html(get_theme_mod('header_office_hours_setting', 'Mon - Fri: 10:00 - 18:00')); ?>
                       </li>
                       <li class="top_li mr-lg-0"><span class="fa fa-envelope-o"></span><a
-                              href="mailto:info@example.com">info@example.com</a>
+                        href="mailto:info@example.com"><?php echo esc_html(get_theme_mod('header_email_setting', 'info@example.com')); ?></a>
                       </li>
 
                   </ul>
