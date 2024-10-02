@@ -18,34 +18,17 @@ get_header();
 <!-- //contact breadcrumb -->
 
  <!-- contact-form -->
+ <?php $contact = get_field('contact_content'); ?>
+
  <section class="w3l-contact-main" id="contact">
    <div class="contact-infhny py-5">
      <div class="container py-lg-3">
        <div class="top-map">
          <div class="map-content-9">
-           <form action="https://sendmail.w3layouts.com/submitForm" method="post">
-             <div class="form-top1">
-               <h3 class="title-big text-center mb-2">Let's get in touch</h3>
+         <h3 class="title-big text-center mb-2">Let's get in touch</h3>
                <p class="mb-lg-5 mb-4 text-center">Give us a call or drop by anytime, we endeavour to answer all
                  enquiries within 24 hours on business days.</p>
-               <div class="form-top">
-
-                 <div class="form-top-left">
-
-                   <input type="text" name="w3lName" id="w3lName" placeholder="Name" required="">
-                   <input type="number" name="w3lPhone" placeholder="Your phone number" required="">
-                   <input type="email" name="w3lSender" id="w3lSender" placeholder="Email*" required="">
-                   <input type="text" name="w3lSubject" id="w3lName" placeholder="Subject" required="">
-                 </div>
-                 <div class="form-top-righ">
-                   <textarea name="w3lMessage" id="w3lMessage" placeholder="Message*" required=""></textarea>
-                 </div>
-               </div>
-               <div class="text-lg-right text-center">
-                 <button type="submit" class="btn btn-style btn-primary">Submit Now</button>
-               </div>
-             </div>
-           </form>
+           <?php echo do_shortcode('[wpforms id="303" title="false"]')  ?>
          </div>
          <div class="cont-details">
            <ul class="address two">
@@ -66,6 +49,7 @@ get_header();
        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.3059445135!2d-74.25986613799748!3d40.69714941774136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m3!3e3!4m0!4m0!5e0!3m2!1sen!2sin!4v1570181661801!5m2!1sen!2sin"
        allowfullscreen=""></iframe>
    </div>
+   
    <!-- //contact map -->
  </section>
  <!-- //contact-form -->
