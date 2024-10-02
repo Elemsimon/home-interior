@@ -274,30 +274,33 @@ $Slider3 = get_template_directory_uri() . '/assets/images/slide1.jpg';
 <!-- //home page block4 -->
 
 <!-- home page block5 -->
-<?php $section5 = get_field('section_5'); ?>
-<div class="w3l-homeblock4 py-5" id="quote" style = "background:url('<?php echo $section5['image']; ?>')">
+<?php 
+  $section5 = get_field('section_5'); 
+  $image = get_template_directory_uri() . '/assets/images/slide4.jpg';
+?>
+<div class="w3l-homeblock4 py-5" id="quote" style = "background:url('<?php echo $section5['image'] ? $section5['image'] : $image; ?>')">
     <div class="container py-xl-5 py-lg-3">
         <div class="welcome-left text-center py-md-5 py-3">
             <h3>
               <?php echo $section5['title'] ? $section5['title'] : 'Let your designer find the right pieces for you, your space and budget. Give us a call or get in touch!'; ?>
             </h3>
-            <a href="<?php echo $section5['button_link_1'] ? $section5['button_link_1'] : 'Read More'; ?>" class="btn btn-style transparent-btn mt-sm-5 mt-4 mr-2"><?php echo $section5['button_text_1']; ?></a>
-            <a href="<?php echo $section5['button_link_2'] ? $section5['button_link_2'] : 'Contact Us'; ?>" class="btn btn-style btn-primary mt-sm-5 mt-4"><?php echo $section5['button_text_1']; ?></a>
+            <a href="<?php echo $section5['button_link_1'] ? $section5['button_link_1'] : '/about'; ?>" class="btn btn-style transparent-btn mt-sm-5 mt-4 mr-2"><?php echo $section5['button_text_1'] ? $section5['button_text_1'] : 'Read More'; ?></a>
+            <a href="<?php echo $section5['button_link_2'] ? $section5['button_link_2'] : '/contact'; ?>" class="btn btn-style btn-primary mt-sm-5 mt-4"><?php echo $section5['button_text_1'] ? $section5['button_text_1'] : 'Contact Us'; ?></a>
         </div>
     </div>
 </div>
 <!-- //home page block5 -->
 
 <!-- home page block6 -->
+<?php $section6 = get_field('section_6'); ?>
 <section class="w3l-bottom py-5">
   <div class="container py-md-4 py-3 text-center">
     <div class="row">
       <div class="col-lg-9 col-md-10 mx-auto">
         <div class="subscribe mx-auto">
           <div class="header-section text-center mx-auto">
-            <h3 class="title-big">Stay Updated! </h3>
-            <p class="my-3"> Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-              Nulla mollis dapibus nunc, ut rhoncus turpis sodales quis.</p>
+            <h3 class="title-big"><?php echo $section6['title'] ? $section6['title'] : 'Stay Updated! '; ?></h3>
+            <p class="my-3"> <?php echo $section6['body'] ? $section6['body'] : 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus turpis sodales quis.'; ?></p>
           </div>
           <form action="" method="post" class="subscribe-wthree pt-2 mt-md-5">
             <div id="responseMessage"></div>
